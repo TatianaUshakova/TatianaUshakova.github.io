@@ -1,0 +1,35 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="blog-page">
+    <header class="page-header">
+        <h1>Blog</h1>
+        <p>All my posts, thoughts, and stories.</p>
+    </header>
+
+    <div class="posts-list">
+        {% if site.posts.size > 0 %}
+            {% for post in site.posts %}
+            <article class="post-item">
+                <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                <p class="post-meta">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </time>
+                    {% if post.author %} • by {{ post.author }}{% endif %}
+                </p>
+                <div class="post-excerpt">
+                    {{ post.excerpt | strip_html | truncatewords: 50 }}
+                </div>
+                <a href="{{ post.url | relative_url }}" class="read-more">Read full post →</a>
+            </article>
+            {% endfor %}
+        {% else %}
+            <div class="no-posts">
+                <p>No posts published yet. Stay tuned for upcoming content!</p>
+            </div>
+        {% endif %}
+    </div>
+</div>

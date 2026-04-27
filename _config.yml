@@ -1,0 +1,33 @@
+title: Your Blog Title
+email: your-email@domain.com
+description: >-
+  Write an awesome description for your new site here.
+baseurl: ""
+url: "https://tatianaushakova.github.io"
+twitter_username: yourusername
+github_username: TatianaUshakova
+
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+
+permalink: /:categories/:year/:month/:day/:title:output_ext

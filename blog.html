@@ -10,26 +10,14 @@ title: Blog
     </header>
 
     <div class="posts-list">
-        {% if site.posts.size > 0 %}
-            {% for post in site.posts %}
-            <article class="post-item">
-                <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-                <p class="post-meta">
-                    <time datetime="{{ post.date | date_to_xmlschema }}">
-                        {{ post.date | date: "%B %d, %Y" }}
-                    </time>
-                    {% if post.author %} • by {{ post.author }}{% endif %}
-                </p>
-                <div class="post-excerpt">
-                    {{ post.excerpt | strip_html | truncatewords: 50 }}
-                </div>
-                <a href="{{ post.url | relative_url }}" class="read-more">Read full post →</a>
-            </article>
-            {% endfor %}
-        {% else %}
-            <div class="no-posts">
-                <p>No posts published yet. Stay tuned for upcoming content!</p>
-            </div>
-        {% endif %}
+        <article class="post-item">
+            <h2><a href="{{ '/blog/ai-safety-current-state' | relative_url }}">AI Safety: Current State</a></h2>
+        </article>
+        <article class="post-item">
+            <h2><a href="{{ '/blog/world-between-agi-and-quantum-computing' | relative_url }}">World Between AGI and Quantum Computing</a></h2>
+        </article>
+        <article class="post-item">
+            <h2><a href="{{ '/blog/what-i-would-work-on-in-alignment' | relative_url }}">What I Would Work On in Alignment</a></h2>
+        </article>
     </div>
 </div>
